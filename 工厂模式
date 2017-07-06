@@ -1,0 +1,14 @@
+// 以函数来#封装创建对象的细节#，同时可以解决全局变量污染问题
+function createPerson(name,age,job){
+  var o = new Object();
+  o.name = name;
+  o.age = age;
+  o.job = job;
+  o.sayName = function(){
+    alert(this.name)
+  };
+  return o;
+}
+var person1 = createPerson('kerryFu',18,'FE');
+var person2 = createPerson('xiaoming',12,'student');
+console.log(person1.name,person2)
