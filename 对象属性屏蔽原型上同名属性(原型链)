@@ -1,0 +1,17 @@
+function Person(){}
+Person.prototype.name = 'kerryFu';
+Person.prototype.sex = 'man';
+Person.prototype.job = 'FE';
+Person.prototype.sayName = function(){
+  alert(this.name)
+}
+
+var person1 = new Person();
+var person2 = new Person();
+person1.name = 'fufu';
+alert(person1.name)     // 'fufu'  来自实例
+alert(person2.name)     // 'kerryFu'  来自原型
+
+// 删除实例上name属性,恢复对原型中name属性的连接
+delete person1.name 
+alert(person1.name)    // 'kerryFu'    来自原型
