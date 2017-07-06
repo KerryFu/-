@@ -1,0 +1,12 @@
+// 判断是否为原型上属性
+function hasPrototypeProperty(object,name){
+  return !object.hasOwnProperty && (name in object)
+}
+
+// 只遍历对象上属性
+for(var name in object){
+  object.hasOwnProperty(name) && console.log(name)
+}
+
+// instanceof判断A是否为B的实例
+A instanceof B
