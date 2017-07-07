@@ -1,0 +1,24 @@
+/* 
+* 与工厂模式区别：
+* 1、没有显示创建对象
+* 2、直接将属性和方法赋给了this
+* 3、没有return语句
+*/ 
+function Person(name,age,job){
+  this.name = name;
+  this.age = age;
+  this.job = job;
+  this.sayName = function(){
+    alert(this.name)
+  };
+}
+var person1 = new Person('kerryFu',18,'FE');
+var person2 = new Person('xiaoming',12,'student');
+
+/*
+* 使用new操作符
+* 1、隐秘的创建一个空对象
+* 2、将this指针指向这个空对象
+* 3、执行构造函数中的代码
+* 4、返回这个对象
+*/ 
